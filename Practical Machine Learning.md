@@ -1,20 +1,14 @@
 Practical Machine Learning
 -----------------------------------------------
 ### Background ###
-Using devices such as Jawbone Up, Nike FuelBand, and Fitbit it is now possible to collect a large amount of data about personal activity relatively inexpensively. These type of devices are part of the quantified self movement - a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. One thing that people regularly do is quantify how much of a particular activity they do, but they rarely quantify how well they do it. In this project, your goal will be to use data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants. They were asked to perform barbell lifts correctly and incorrectly in 5 different ways. More information is available from the website [here] [1] (see the section on the Weight Lifting Exercise Dataset).
-
-[1]: http://groupware.les.inf.puc-rio.br/har "here"
+Using devices such as Jawbone Up, Nike FuelBand, and Fitbit it is now possible to collect a large amount of data about personal activity relatively inexpensively. These type of devices are part of the quantified self movement - a group of enthusiasts who take measurements about themselves regularly to improve their health, to find patterns in their behavior, or because they are tech geeks. One thing that people regularly do is quantify how much of a particular activity they do, but they rarely quantify how well they do it. In this project, your goal will be to use data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants. They were asked to perform barbell lifts correctly and incorrectly in 5 different ways. More information is available from the website [here](http://groupware.les.inf.puc-rio.br/har) (see the section on the Weight Lifting Exercise Dataset).
 
 ### Data ###
-The training data for this project are available [here] [1].
+The training data for this project are available [here](https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv).
 
-The test data are available [here] [2]. 
+The test data are available [here](https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv). 
 
-The data for this project come from this [source] [3]. If you use the document you create for this class for any purpose please cite them as they have been very generous in allowing their data to be used for this kind of assignment.
-
-[1]: https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv "here"
-[2]: https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv "here"
-[3]: http://groupware.les.inf.puc-rio.br/har "source"
+The data for this project come from this [source](http://groupware.les.inf.puc-rio.br/har). If you use the document you create for this class for any purpose please cite them as they have been very generous in allowing their data to be used for this kind of assignment.
 
 ### What you should submit ###
 The goal of your project is to predict the manner in which they did the exercise. This is the â **classeâ** variable in the training set. You may use any of the other variables to predict with. You should create a report describing how you built your model, how you used cross validation, what you think the expected out of sample error is, and why you made the choices you did. You will also use your prediction model to predict 20 different test cases.
@@ -42,7 +36,7 @@ Cross-validation will be performed by subsampling our training data set randomly
 #### Expected out-of-sample error ####
 The expected out-of-sample error will correspond to the quantity: 1-accuracy in the cross-validation data. Accuracy is the proportion of correct classified observation over the total sample in the subTesting data set. Expected accuracy is the expected accuracy in the out-of-sample data set (i.e. original testing data set). Thus, the expected value of the out-of-sample error will correspond to the expected number of missclassified observations/total observations in the Test data set, which is the quantity: 1-accuracy found from the cross-validation data set.
 
-Our outcome variable âclasseâ is an unordered factor variable. Thus, we can choose our error type as 1-accuracy. We have a large sample size with N= 19622 in the Training data set. This allow us to divide our Training sample into subTraining and subTesting to allow cross-validation. Features with all missing values will be discarded as well as features that are irrelevant. All other features will be kept as relevant variables. Decision tree and random forest algorithms are known for their ability of detecting the features that are important for classification [2].
+Our outcome variable â **classeâ** is an unordered factor variable. Thus, we can choose our error type as 1-accuracy. We have a large sample size with N= 19622 in the Training data set. This allow us to divide our Training sample into subTraining and subTesting to allow cross-validation. Features with all missing values will be discarded as well as features that are irrelevant. All other features will be kept as relevant variables. Decision tree and random forest algorithms are known for their ability of detecting the features that are important for classification [2].
 
 ### Packages, Libraries and Seed ####
 Installing packages, loading libraries, and setting the seed for reproduceability:
@@ -185,6 +179,8 @@ To view the decision tree with fancy :
 ```{r} 
 fancyRpartPlot(modFitA1)
 ```
+
+![plot of chunk](https://github.com/asselbiss/Practical-Machine-Learning/blob/master/Rplot02.png)
 
 #### Predicting: ####
 ```{r}
